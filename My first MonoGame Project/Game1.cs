@@ -8,7 +8,11 @@ namespace My_first_MonoGame_Project
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        Texture2D dinoTexture;
+        Texture2D skeletonTexture;
+        Texture2D firewizardTexture;
+        Texture2D icewizardTexture;
+        Texture2D ewizardTexture;
+        Texture2D arenaTexture;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -32,7 +36,13 @@ namespace My_first_MonoGame_Project
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            dinoTexture = Content.Load<Texture2D>("dino");
+            skeletonTexture = Content.Load<Texture2D>("skeleton");
+            icewizardTexture = Content.Load<Texture2D>("ice (1)");
+            firewizardTexture = Content.Load<Texture2D>("fire");
+            ewizardTexture = Content.Load<Texture2D>("ewizard");
+            arenaTexture = Content.Load<Texture2D>("arena");
+
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -51,7 +61,11 @@ namespace My_first_MonoGame_Project
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(dinoTexture, new Vector2(10, 10), Color.White);
+            _spriteBatch.Draw(arenaTexture, new Vector2(0, 0), Color.White);
+            _spriteBatch.Draw(skeletonTexture, new Vector2(650, 300), Color.White);
+            _spriteBatch.Draw(icewizardTexture, new Vector2(160, 10), Color.White);
+            _spriteBatch.Draw(firewizardTexture, new Vector2(320, 80), Color.White);
+            _spriteBatch.Draw(ewizardTexture, new Vector2(515, 100), Color.White);
             _spriteBatch.End();
             base.Draw(gameTime);
         }
